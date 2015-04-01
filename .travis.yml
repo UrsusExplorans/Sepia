@@ -1,13 +1,15 @@
 before_install:
- - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
- - sudo apt-get update -qq
- - sudo apt-get install qtbase5-dev libqt5xmlpatterns5-dev
- - sudo apt-get install qt5-default qttools5-dev-tools
-
+- sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+- sudo apt-get update -qq
+- sudo apt-get install qtbase5-dev libqt5xmlpatterns5-dev
+- sudo apt-get install qt5-default qttools5-dev-tools
 script:
- - cd sepiaGen
- - qmake
- - make
- - cd plugins/CppQt-RSB
- - qmake
- - make
+- cd sepiaGen
+- qmake
+- make
+- cd plugins/CppQt-RSB
+- qmake
+- make
+deploy:
+  token:
+    secure: owAaaLgLS8s0sUWpPhaYoGTAadaS2RqyujmrEHe+KcuQijS2urieqDBlz3JXlWiIYmIygZ8yA3mgyP7xBkxQUOGy6ORFw60WzajuGO5oVsR4ox6cW3Hpn0O9TyRK+axoYApIcWksC3bqz/om4ockWAkg+kWnumcDia1gwEzpyFg=
