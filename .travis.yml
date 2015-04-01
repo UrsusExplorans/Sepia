@@ -11,5 +11,8 @@ script:
 - qmake
 - make
 deploy:
+  provider: packagecloud
+  username: "UrsusExplorans"
+  dist: "ubuntu/precise"
   token:
     secure: owAaaLgLS8s0sUWpPhaYoGTAadaS2RqyujmrEHe+KcuQijS2urieqDBlz3JXlWiIYmIygZ8yA3mgyP7xBkxQUOGy6ORFw60WzajuGO5oVsR4ox6cW3Hpn0O9TyRK+axoYApIcWksC3bqz/om4ockWAkg+kWnumcDia1gwEzpyFg=
