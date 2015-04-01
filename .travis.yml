@@ -8,6 +8,6 @@ script:
  - cd sepiaGen
  - qmake
  - make
- - cd plugins/CppGt-RSB
+ - cd plugins/CppQt-RSB
  - qmake
  - make
