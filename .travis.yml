@@ -4,21 +4,26 @@ before_install:
 - sudo apt-get install qtbase5-dev libqt5xmlpatterns5-dev
 - sudo apt-get install qt5-default qttools5-dev-tools checkinstall
 - export INSTALL_PATH=/usr
+- mkdir packages
 
 script:
 - cd sepiaGen
 - qmake
 - make
 - sudo checkinstall -D --install=no --requires libqt5xmlpatterns5 -y --maintainer=ursus_explorans@yahoo.de
+- mv *.deb ~/packages
 - cd plugins/CppQt-RSB
 - qmake
 - make
 #- sudo checkinstall -D --install=no --requires 'sepiagen libqt5xmlpatterns5' -y --maintainer=ursus_explorans@yahoo.de
+#- mv *.deb ~/packages
+- cd
 
 deploy:
   provider: packagecloud
   username: "UrsusExplorans"
   repository: "Sepia"
   dist: "ubuntu/precise"
+  local-dir: packages
   token:
     secure: owAaaLgLS8s0sUWpPhaYoGTAadaS2RqyujmrEHe+KcuQijS2urieqDBlz3JXlWiIYmIygZ8yA3mgyP7xBkxQUOGy6ORFw60WzajuGO5oVsR4ox6cW3Hpn0O9TyRK+axoYApIcWksC3bqz/om4ockWAkg+kWnumcDia1gwEzpyFg=
