@@ -2,7 +2,8 @@ before_install:
 - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
 - sudo apt-get update -qq
 - sudo apt-get install qtbase5-dev libqt5xmlpatterns5-dev
-- sudo apt-get install qt5-default qttools5-dev-tools
+- sudo apt-get install qt5-default qttools5-dev-tools checkinstall
+- export INSTALL_PATH=/usr
 
 script:
 - cd sepiaGen
@@ -11,6 +12,10 @@ script:
 - cd plugins/CppQt-RSB
 - qmake
 - make
+
+before_deploy: 
+- "echo 'ready?'"
+- sudo checkinstall -D --install=no --requires libqt5xmlpatterns5 -y --maintainer=ursus_explorans@yahoo.de
 
 deploy:
   provider: packagecloud
