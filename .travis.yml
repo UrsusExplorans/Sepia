@@ -9,11 +9,11 @@ script:
 - cd sepiaGen
 - qmake
 - make
-- sudo checkinstall -D --install=no --requires libqt5xmlpatterns5 -y --maintainer=ursus_explorans@yahoo.de
+- sudo checkinstall -D --install=no --requires sepiagen libqt5xmlpatterns5 -y --maintainer=ursus_explorans@yahoo.de
 - cd plugins/CppQt-RSB
 - qmake
 - make
-- sudo checkinstall -D --install=no --requires sepiagen libqt5xmlpatterns5 -y --maintainer=ursus_explorans@yahoo.de
+- sudo checkinstall -D --install=no --requires sepiagen_cppqt-rsb libqt5xmlpatterns5 -y --maintainer=ursus_explorans@yahoo.de
 
 deploy:
   provider: packagecloud
