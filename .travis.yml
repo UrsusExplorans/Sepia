@@ -15,7 +15,7 @@ script:
 - qmake
 - make
 #- sudo checkinstall -D --install=no --requires 'sepiagen libqt5xmlpatterns5' -y --maintainer=ursus_explorans@yahoo.de
-- mv *.deb ~/
+#- mv *.deb ~/
 - cd
 
 deploy:
